@@ -48,6 +48,11 @@ The current BLE connection state can be read from the `CONN_STATE` pins:
 | 1             | 1             | Connected                        |
 
 
+### Advertising
+
+The clicky-turtle-c3 will advertise via BLE when it is not connected to any BLE controller. The name of the device will 
+be `clicky-c3-X` where X is a unique hexadecimal number based on the hardware serial number.
+
 ### SPI transactions
 
 These commands are possible to execute over the SPI interface:
@@ -130,6 +135,8 @@ the first byte, and then 31 bytes of `0x00` (or any other data) is sent to make 
 data from the PC will be sent simulatenously by the clicky-turtle-c3 firmware over the SPI interface in response. If the
 transaction is longer than 32 bytes, the extra data returned is undefined.
 
+For an example of sending uplinks and downlinks with python, please see the `uplink_downlink_example.py` file. 
+
 **Important:** Due to some peculiarities in the way that the ESP32-C3 MCU implements SPI, you may not always 
 receive the latest packet when performing the `SIDEBAND_DOWNLINK` transaction, and may instead receive the previous 
 packet. It is therefore recommended that you perform the `SIDEBAND_DOWNLINK` transaction often and repeatedly to ensure 
@@ -144,8 +151,11 @@ second or two to completely execute.
 
 ### Building and flashing the firmware
 
+(Note for UQ students: You do not need to flash the firmware yourself. The module comes pre-flashed with the firmware.)
+
 This firmware can be built using ESP-IDF v5.0 (release tag). However, there is an issue in this release that prevents proper pairing 
 with Mac operating systems. To correct this, update the function `create_hid_db` in `ble_hidd.c`
 and update the HID over GATT (ie HOGP) configuration as per the `idf-5-fix.patch` file included in this repository.
 
-Do not use ESP-IDF v5.1 as it is breaks HID enumeration on Windows.
+Do not use ESP-IDF v5.1 as it is breaks HID enumeration on Windows. The firmware can be flashed using `esptool.py` with 
+the firmware release in this repository. The binary is merged, so you just need to flash it to address 0.
