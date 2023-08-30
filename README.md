@@ -32,8 +32,8 @@ and a description of how the pins are used in the clicky-turtle-c3 firmware is b
 
 ### SPI_IDLE pin
 
-The `SPI_IDLE` pin indicates whether the SPI interface is able to accept new transactions. If the pin is high, the device 
-is able to accept new transactions. If it is low, the device is busy and the result of executing a transaction is 
+The `SPI_IDLE` pin indicates whether the SPI interface is able to accept new transactions. If the pin is low, the device 
+is able to accept new transactions. If it is high, the device is busy and the result of executing a transaction is 
 undefined.  
 
 ### CONN_STATE pins
