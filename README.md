@@ -26,8 +26,8 @@ and a description of how the pins are used in the clicky-turtle-c3 firmware is b
 | 14 | IO19   | Unused; leave floating                                                                           |
 | 15 | IO3    | SPI_IDLE                                                                                         |
 | 16 | IO2    | Connect to 3V3                                                                                   |
-| 17 | IO1    | CONN_STATE[1]                                                                                    |
-| 18 | IO0    | CONN_STATE[0]                                                                                    |
+| 17 | IO1    | CONN_STATE[0]                                                                                    |
+| 18 | IO0    | CONN_STATE[1]                                                                                    |
 | 19 | GNDPAD | Exposed ground pad on bottom of module. Either connect to GND or leave unconnected.              |
 
 ### SPI_IDLE pin
