@@ -26,14 +26,14 @@ and a description of how the pins are used in the clicky-turtle-c3 firmware is b
 | 14 | IO19   | Unused; leave floating                                                                           |
 | 15 | IO3    | SPI_IDLE                                                                                         |
 | 16 | IO2    | Connect to 3V3                                                                                   |
-| 17 | IO1    | CONN_STATE[1]                                                                                    |
-| 18 | IO0    | CONN_STATE[0]                                                                                    |
+| 17 | IO1    | CONN_STATE[0]                                                                                    |
+| 18 | IO0    | CONN_STATE[1]                                                                                    |
 | 19 | GNDPAD | Exposed ground pad on bottom of module. Either connect to GND or leave unconnected.              |
 
 ### SPI_IDLE pin
 
-The `SPI_IDLE` pin indicates whether the SPI interface is able to accept new transactions. If the pin is high, the device 
-is able to accept new transactions. If it is low, the device is busy and the result of executing a transaction is 
+The `SPI_IDLE` pin indicates whether the SPI interface is able to accept new transactions. If the pin is low, the device 
+is able to accept new transactions. If it is high, the device is busy and the result of executing a transaction is 
 undefined.  
 
 ### CONN_STATE pins
