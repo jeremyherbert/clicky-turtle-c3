@@ -675,8 +675,8 @@ void app_main(void) {
 
     esp_base_mac_addr_set(random_mac);
 
-
-    sprintf(ble_name, "clicky-c3-%x%x%x", static_mac[2], static_mac[3], static_mac[4]);
+    ESP_LOGI(TAG, "Static MAC: %02X %02X %02X %02X %02X %02X %02X %02X", static_mac[0], static_mac[1], static_mac[2], static_mac[3], static_mac[4], static_mac[5], static_mac[6], static_mac[7]);
+    sprintf(ble_name, "c-%x%x%x%x%x%x%x%x", static_mac[0], static_mac[1], static_mac[2], static_mac[3], static_mac[4], static_mac[5], static_mac[6], static_mac[7]);
     sprintf(ble_serial, "%x%x%x%x%x%x", random_mac[0], random_mac[1], random_mac[2], random_mac[3], random_mac[4],
             random_mac[5]);
     ble_hid_config.device_name = ble_name;

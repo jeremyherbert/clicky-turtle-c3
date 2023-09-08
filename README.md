@@ -50,8 +50,12 @@ The current BLE connection state can be read from the `CONN_STATE` pins:
 
 ### Advertising
 
-The clicky-turtle-c3 will advertise via BLE when it is not connected to any BLE controller. The name of the device will 
-be `clicky-c3-X` where X is a unique hexadecimal number based on the hardware serial number.
+The clicky-turtle-c3 will advertise via BLE when it is not connected to any BLE controller. 
+
+If you are using firmware v0.1.0, the name of the device will 
+be `clicky-c3-X` where X is a hexadecimal number based on the hardware serial number of the radio.
+
+If you are using firmware v0.1.1, the name will be `c-X` where X is a unique hexadecimal number.
 
 ### SPI transactions
 
